@@ -15,6 +15,7 @@ import { SignModule } from './sign/sign.module';
 import {HttpClientModule} from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import {MatBadgeModule} from '@angular/material/badge';
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 @NgModule({
   declarations: [
     AppComponent,
@@ -45,7 +46,7 @@ import {MatBadgeModule} from '@angular/material/badge';
   // exports:[
   //   MatBadgeModule
   // ],
-  providers: [],
+  providers: [  {provide: LocationStrategy, useClass: HashLocationStrategy}],
   bootstrap: [AppComponent],
 })
 export class AppModule { }
