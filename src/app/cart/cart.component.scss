@@ -1,0 +1,27 @@
+.cart-image{
+    @media screen and (max-width: 768px){
+       
+      img{
+        width: 130px;
+        height:130px;
+      }
+        
+    }
+    img{
+object-fit: cover;
+       max-width: 250px;
+       max-height: 200px;
+      
+    }
+       
+}
+.container{
+    margin-top:50px;
+    margin-bottom: 50px;
+  
+    padding: 1.5em;
+    border-radius: 10px;
+    box-shadow: inset 0px 0px 22px 3px rgba(255, 255, 255, 0.1) ;
+    
+
+}

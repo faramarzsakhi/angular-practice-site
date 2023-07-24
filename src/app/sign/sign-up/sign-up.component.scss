@@ -1,0 +1,24 @@
+.inner-addon { 
+    position: relative; 
+}
+
+/* style icon */
+.inner-addon .bi {
+  position: absolute;
+  padding: 10px;
+  pointer-events: none;
+}
+
+/* align icon */
+.left-addon .bi  { left:  0px;}
+.right-addon .bi { right: 0px;}
+
+/* add padding  */
+.left-addon input  { padding-left:  30px; }
+.right-addon input { padding-right: 30px; }
+.inputs{
+  max-width: 300px;
+}
+form {
+  margin-top:100px;
+}

@@ -1,0 +1,60 @@
+<nav class="navbar navbar-expand-lg bg-white p-4 p-md-2`">
+    <div class="container d-flex justify-content-start align-items-center border-bottom border-secondary-subtle ">
+      <button class="navbar-toggler border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasItems"
+        aria-controls="offcanvasItems" data-bs-dismiss="#offCanvas"><img src="assets/images/icon-menu.svg" alt="menu">
+      </button>
+
+      <div class="navbar-brand mx-2 mb-lg-3">
+        <a routerLink="/home" class=""><img src="assets/images/logo.svg" alt="logo"></a>
+      </div>
+      <div #offCanvas class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasItems" aria-labelledby="offcanvasItemsLabel" >
+        <div class="offcanvas-header">
+          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+          <div>
+            <ul class="navbar-nav me-auto mb-2 p-3">
+              <li class="nav-item ms-1"  routerLinkActive="active">
+                <a class="nav-link" aria-current="page" routerLink="/product" data-bs-dismiss="offcanvas">Products</a>
+              </li>
+              <li class="nav-item ms-1"  routerLinkActive="active" >
+                <a class="nav-link" routerLink="/blog" data-bs-dismiss="offcanvas">blog</a>
+              </li>
+              <li class="nav-item ms-1"  routerLinkActive="active" >
+                <a class="nav-link"routerLink="/dynamicpage" data-bs-dismiss="offcanvas" >DynamicPage</a>
+              </li>
+
+              <li class="nav-item ms-1" routerLinkActive="active">
+                <a class="nav-link hover" routerLink="/about"  data-bs-dismiss="offcanvas"> About</a>
+              </li>
+              <li class="nav-item ms-1" routerLinkActive="active" >
+                <a class="nav-link" routerLink="/contact" data-bs-dismiss="offcanvas" >Contact</a>
+              </li>
+              <div class="d-flex flex-column" routerLinkActive="active">
+                <a class="nav-link fw-bold fs-5" routerLink="/signup" data-bs-dismiss="offcanvas" ><i class="bi bi-person"></i>Sign up</a>
+              </div>
+
+            </ul>
+
+          </div>
+        </div>
+      </div>
+     
+      
+      
+      <div class="nav-item d-flex flex-row align-items-center ms-auto gap-1">
+        <div class="nav-link ms-lg-auto  position-relative w-50 mx-2">
+          <div class="badge rounded-pill bg-orange text-white position-absolute  top-0 end-0 "> 
+          </div>
+            
+          <button type="button" class=" border-0 bg-transparent " routerLink="/cart"  [matBadge]="cartQuantityArray.length" matBadgeColor="warn">
+            <img src="assets/images/icon-cart.svg" alt="cart" role="button" class="">
+            <!-- <span class=" top-0 end-0 badge bg-danger text-white " (click)="0"></span> -->
+          </button>
+
+        </div>
+      </div>
+      
+    </div>
+
+  </nav>

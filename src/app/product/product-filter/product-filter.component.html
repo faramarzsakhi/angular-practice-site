@@ -1,0 +1,46 @@
+<div class="container alert alert-secondary p-3 text-center">
+    <h1>Filters</h1>
+    <div class="d-flex flex-column flex-md-row align-items-center justify-content-evenly fs-5 gap-2">
+      <label for="all">
+        All
+        <input type="radio" name="filter" value="" id="all"
+          (change)="onFilterKeyChanged()"  
+          [(ngModel)]="filterKey" 
+          >
+      </label>  
+      <label for="popular">
+            Popular
+            <input type="radio" name="filter" value="popular" id="popular"
+            [(ngModel)]="filterKey"
+            (change)="onFilterKeyChanged()"
+            >
+        </label>
+        <label for="mostExpensive">
+            Most Expensive
+            <input type="radio" name="filter" value="mostExpensive" id="mostExpensive"
+              (change)="onFilterKeyChanged()"
+              [(ngModel)]="filterKey"
+               >
+        </label>
+        
+        
+        <label for="free">
+            Free
+            <input type="radio" name="filter" value="free" id="free"
+              (change)="onFilterKeyChanged()"
+              [(ngModel)]="filterKey"
+                 >
+        </label>
+       
+        <label for="newest">
+            Newest
+            <input type="radio" name="filter" value="newest" id="newest"
+              (change)="onFilterKeyChanged()"  
+              [(ngModel)]="filterKey" 
+              >
+        </label>
+        
+        
+    </div>
+  </div>
+  

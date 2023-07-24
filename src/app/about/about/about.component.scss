@@ -1,0 +1,45 @@
+img{
+    max-width: 500px;
+}
+.crew{
+padding: 1em;
+border:2px solid black;
+background: rgba(255, 165, 0, 0.1);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(5px);
+border: 1px solid rgba(255, 165, 0, 0.49);
+    border-radius: 9px;
+    min-width: 300px;
+    .img1{
+        width: 80px;
+        height: 80px;
+        border-radius: 100%;
+       background-image: url('/assets/images/persons/tom.jpg');
+       background-size: contain;
+       background-position: center;
+       background-repeat: no-repeat;
+       background-color:rgb(216, 216, 216);
+    }
+    .img2{
+        width: 80px;
+        height: 80px;
+        border-radius: 100%;
+       background-image: url('/assets/images/persons/bob.jpg');
+       background-size: contain;
+       background-position: center;
+       background-repeat: no-repeat;
+       background-color:rgb(216, 216, 216);
+    }
+    .img3{
+        width: 80px;
+        height: 80px;
+        border-radius: 100%;
+       background-image: url('/assets/images/persons/barbara.jpg');
+       background-size: contain;
+       background-position: center;
+       background-repeat: no-repeat;
+       background-color:rgb(216, 216, 216);
+    }
+    
+}

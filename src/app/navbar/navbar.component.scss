@@ -1,0 +1,20 @@
+ul {
+    height: 100%;
+    
+    li{
+        transition: 200ms;
+        height: 100%;
+        border-bottom:5px solid transparent;
+        &:hover{
+            border-bottom:5px solid orange;
+        }
+        a{
+            border-bottom:5px solid white;
+        }
+    }
+   
+}
+.active{
+    border-bottom:5px solid orange !important;
+    transition: 500ms;
+}
