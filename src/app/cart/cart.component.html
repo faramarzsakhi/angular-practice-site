@@ -1,0 +1,60 @@
+<div class="container d-flex flex-column min-vh-100 p-3">
+    <h4>Cart Items</h4>
+    <hr>
+    <div class="item row px-4" *ngFor="let p of cartItems; let i = index">
+        
+        <div class="d-flex col-6 col-md-4 align-items-center justify-content-center cart-image">
+            <img [src]="p.thumbnail" [alt]="p.title">
+        </div>
+
+
+
+        <div class="details d-flex flex-column col-6 col-md-4">
+            <h4>{{p.title}}</h4>
+            <p>{{p.description}}</p>
+        </div>
+        <div class="d-flex flex-row flex-md-column col-12 col-md-4 position-relative my-4">
+            <div class="d-flex  flex-row align-items-center fs-4 my-4">
+                <span class="d-flex mx-4 ">
+                    <i class="bi bi-x fs-4">
+                    </i>
+                    <span>{{quantity[i]}}</span>
+
+                </span>
+                <span class="d-flex gap-1">
+                    <i class="bi bi-coin"></i><span>{{quantity[i]*p.price}}</span>
+                </span>
+            </div>
+            <div class="d-flex justify-content-start align-items-center gap-4 fs-2 fw-bolder ms-auto ms-md-1 end-0 ">
+                <i class="bi bi-dash bg-danger bg-gradient text-white btn py-1 px-2 " role="button" (click)="removeQuantity(i)"></i>
+                <button class="btn bg-secondary bg-gradient py-1 px-2 text-white" (click)="addQuantity(i)"><i class="bi bi-plus"></i></button>
+                <i class="bi bi-trash" role="button" (click)="removeItem(i)"></i>
+                
+            </div>
+            
+
+        </div>
+    </div>
+    <hr>
+    <!-- <div class="item d-flex flex-column flex-md-row justify-content-start  align-items-center gap-5" *ngFor="let p of cartItems; let i = index">
+       <div class="d-flex">
+        <div class="d-flex justify-content-start gap-4 fs-5 fw-bolder start-0">
+            <i class="bi bi-x" role="button"></i>
+            <i class="bi bi-heart" role="button"></i>
+        </div>
+        
+        <img [src]="p.images[0]" [alt]="p.title" class="cart-image">
+       </div>
+        
+        
+        <div class="details d-flex flex-column">
+            <h4>{{p.title}}</h4>
+            <p>{{p.description}}</p>
+        </div>
+
+        <span class="ms-auto">x{{quantity[i]}} -> {{quantity[i]*p.price}}</span>
+        <hr>
+    </div> -->
+
+
+</div>

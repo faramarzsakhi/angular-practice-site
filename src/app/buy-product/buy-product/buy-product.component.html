@@ -1,0 +1,58 @@
+<div class="container my-5">
+    <div class=" row">
+        <div class="col-12 col-lg-6">
+            <div id="carouselExample" class="carousel slide">
+                <div class="carousel-inner">
+                  
+                   <ng-container *ngFor="let image of product.images; let i = index" >
+                    <div class="carousel-item " [ngClass]="{'active': i === 0}">
+                        <img [src]="product.images[i]" class="d-block w-100">
+                    </div>
+                   </ng-container>
+                            
+                            
+                      
+                    
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample"
+                        data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExample"
+                        data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+        </div>
+                            
+                        
+                    
+                    
+        <div class="col-12 col-lg-6 d-flex flex-column ">
+            <h1 class="text-primary">{{product.title}}</h1>
+            <p class="fs-5 text-primary-emphasis">{{product.description}}</p>
+            <div class="flex-row justify-content-around mt-5 fs-2 position-relative">
+                <span class=" text-secondary p-2 fs-3  strikethrough">${{product.price |number}}</span><span class="mx-5">${{ parseInt(product.price-(product.price*(product.discountPercentage/100))) |number}}</span>
+                <span class="badge rounded-pill p-2 bg-danger text-white fs-6 position-absolute top-100 start-0 rounded-pill ">{{product.discountPercentage}}%</span>
+             
+                
+            </div>
+            <div class="d-flex flex-column mt-5 align-items-start justify-content-end">
+                <div class="quantity ">
+                    <button type="button" (click)="addQuantity()"><i class="bi bi-plus"></i></button>
+                    <input type="text" name="quantity" [(ngModel)]="buyQuantity" readonly>
+                    <button type="button" (click)="minusQuantity()"><i class="bi bi-dash"></i></button>
+                </div>
+                <div class="d-flex flex-row align-items-center  add-to-cart-button">
+                     <button type="button" class="px-5 py-2 ms-2" (click)="addToCart(product)" (click)="addToCartNumber(buyQuantity)">Add to Cart
+                    </button> 
+                    <div class="alert alert-warning visually-hidden position-fixed bottom-0 start-0"  #cartAlert>{{buyQuantity}} added to cart</div>
+                </div>
+            </div>
+           
+        </div>
+    </div>
+        
+</div>
