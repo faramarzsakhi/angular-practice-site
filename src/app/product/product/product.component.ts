@@ -6,6 +6,7 @@ import { HttpClient} from '@angular/common/http';
 import { TodoModel } from 'src/app/Models/todoModel';
 import { DummyProductModel } from 'src/app/Models/dummyProductModel';
 import { DummyProducts } from 'src/app/Models/dummyProducts';
+import { Observable } from 'rxjs';
 @Component({
   selector: 'app-product',
   templateUrl: './product.component.html',
@@ -14,30 +15,27 @@ import { DummyProducts } from 'src/app/Models/dummyProducts';
 
 export class ProductComponent {
   constructor(private productsService:ProductsServiceService,private _http:HttpClient) {
-    console.log(this._http.get('https://dummyjson.com/products/').pipe((x)=>{
-      return x;
-    }))
+    this.dummyProducts$ = this.productsService.getTestData();
   }
   @ViewChild("ratings") ratingsElement:ElementRef={} as ElementRef;
   
   testProductsArray:Array<ProductModel>;
   filterKey:string='';
-  //new class test>>>>>>>>>>>>>>>>>>>>>>
-  todoModel:TodoModel[]=[];
-  dummyProducts:DummyProducts= new DummyProducts();
+  //new class test>>>>>>>>>>>>>>>>>>>>>
+  dummyProducts$:Observable<DummyProducts>
   loader = true;
 test(){
   console.log("workds");
 }
   ngOnInit(){
-    this.productsService.getTestData().subscribe(data=>{
-      this.dummyProducts=data
-     console.log(this.dummyProducts);
-    })
+    // this.productsService.getTestData().subscribe(data=>{
+    //   this.dummyProducts$=data
+
+    // })
    console.warn("product Component Loaded");
    setTimeout(()=>{
     this.loader=false;
-   },2000);
+   },3000);
    
   }
 
